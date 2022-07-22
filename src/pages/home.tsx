@@ -3,14 +3,14 @@ import Menu from '../components/Menu/Menu'
 import useSWR from 'swr'
 
 import api from '../services/api'
+import { IDataFilms } from '../interface/data'
 
 export default function index() {
   const {
     data,
     error,
     isValidating: loading,
-  } = useSWR(['/films', 'get'], api, {
-    fallbackData: [],
+  } = useSWR<IDataFilms, Error>(['/films', 'get'], api, {
     revalidateOnFocus: false,
     refreshWhenHidden: false,
     refreshInterval: 0,
