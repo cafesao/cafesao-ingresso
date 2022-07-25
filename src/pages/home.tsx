@@ -4,6 +4,7 @@ import useSWR from 'swr'
 
 import api from '../services/api'
 import { IDataFilms } from '../interface/data'
+import { useEffect } from 'react'
 
 export default function index() {
   const {
@@ -16,6 +17,10 @@ export default function index() {
     refreshInterval: 0,
     dedupingInterval: 0,
   })
+
+  useEffect(() => {
+    console.log(data)
+  }, [])
 
   return (
     <div className="flex flex-col h-screen">

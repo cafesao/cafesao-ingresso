@@ -9,9 +9,8 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.7",
-    "axios": "^0.27.2",
     "cssnano": "^5.1.12",
-    "daisyui": "^2.19.1",
+    "daisyui": "^2.20.0",
     "postcss": "^8.4.14",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -25,6 +24,6 @@
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.0",
     "typescript": "^4.7.4",
-    "vite": "^3.0.2"
+    "vite": "^3.0.3"
   }
 }
