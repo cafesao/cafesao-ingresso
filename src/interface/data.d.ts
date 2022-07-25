@@ -1,6 +1,7 @@
 export interface IDataFilms {
   id?: number
   name?: string
+  description?: string
   premiere?: string
   debut?: string
   image?: string

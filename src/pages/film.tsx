@@ -29,12 +29,21 @@ export default function film() {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div>
-          <h1>{data?.name}</h1>
-          <h2>Cinema Itajai</h2>
-          <p>R. Samuel Heusi, 234</p>
-          {data?.daysHours?.map((daysAndHours) => (
-            <DaysAndHours daysHours={daysAndHours} />
+        <div className="justify-center text-center items-center">
+          <div className="hero bg-base-200">
+            <div className="hero-content flex-col lg:flex-row">
+              <img
+                src={data?.image}
+                className="max-w-sm rounded-lg shadow-2xl"
+              />
+              <div>
+                <h1 className="text-5xl font-bold">{data?.name}</h1>
+                <p className="py-6">{data?.description}</p>
+              </div>
+            </div>
+          </div>
+          {data?.daysHours?.map((daysAndHours, index) => (
+            <DaysAndHours key={index} daysHours={daysAndHours} />
           ))}
         </div>
       )}

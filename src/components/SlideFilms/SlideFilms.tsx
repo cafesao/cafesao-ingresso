@@ -22,19 +22,22 @@ export default function SlideFilms({ data }: any) {
             onClick={() => navigate(`/film?id=${film.id}`)}
           />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href={`#slide${film.id - 1}`} className="btn btn-circle">
+            <a
+              href={`#slide${film.id - 1}`}
+              className="btn btn-circle btn-xs lg:btn-lg"
+            >
               {'<'}
             </a>
             <a
               href={`#slide${film.id === max ? data[0].id : film.id + 1}`}
-              className="btn btn-circle"
+              className="btn btn-circle btn-xs lg:btn-lg"
             >
               {'>'}
             </a>
           </div>
-          <div className="absolute flex justify-center transform -translate-y-1/2 left-1/2 bottom-0">
+          <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 bottom-0 text-center">
             <h5
-              className="text-4xl text-white"
+              className="text-md text-white lg:text-4xl"
               onClick={() => navigate(`/film?id=${film.id}`)}
             >
               {film.name}
