@@ -37,7 +37,7 @@ export default function SlideFilms({ data }: any) {
           </div>
           <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 bottom-0 text-center">
             <h5
-              className="text-md text-white lg:text-4xl"
+              className="btn btn-xs glass text-xs text-white lg:btn-md lg:text-2xl"
               onClick={() => navigate(`/film?id=${film.id}`)}
             >
               {film.name}

@@ -1,18 +1,31 @@
+import { useNavigate, useLocation } from 'react-router-dom'
 import { IDataFilmsChoiceDaysHours } from '../../interface/data'
 
 export default function DaysAndHours(props: {
   daysHours: IDataFilmsChoiceDaysHours
+  checked: boolean
 }) {
+  const search = useLocation().search
+  const id = new URLSearchParams(search).get('id')
+  const navigate = useNavigate()
   return (
     <div className="collapse">
-      <input type="checkbox" />
-      <div className="collapse-title text-xl font-medium text-center">
-        <h2 className="text-center">{props.daysHours.day}</h2>
+      <input type="checkbox" defaultChecked={props.checked} />
+      <div className="collapse-title text-xl font-medium mx-4 text-orange-400">
+        <h2>{props.daysHours.day}</h2>
       </div>
       <div className="collapse-content ">
         <div className="btn-group btn-group-vertical items-center">
           {props.daysHours.hours?.map((hour, index) => (
-            <button key={index} className="btn btn-lg btn-wide">
+            <button
+              key={index}
+              className="btn btn-lg btn-wide"
+              onClick={() => {
+                navigate(
+                  `/time?id=${id}&choiceDay=${props.daysHours.day}&choiceHours=${hour}`,
+                )
+              }}
+            >
               {hour}
             </button>
           ))}

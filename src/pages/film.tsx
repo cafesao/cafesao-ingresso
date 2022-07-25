@@ -43,7 +43,11 @@ export default function film() {
             </div>
           </div>
           {data?.daysHours?.map((daysAndHours, index) => (
-            <DaysAndHours key={index} daysHours={daysAndHours} />
+            <DaysAndHours
+              key={index}
+              daysHours={daysAndHours}
+              checked={index === 0 ? true : false}
+            />
           ))}
         </div>
       )}
