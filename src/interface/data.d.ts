@@ -15,3 +15,9 @@ export interface IDataFilmsChoiceDaysHours {
   day?: string
   hours?: [string]
 }
+
+export interface IChair {
+  seat: string
+  chosen: boolean
+  special: boolean
+}

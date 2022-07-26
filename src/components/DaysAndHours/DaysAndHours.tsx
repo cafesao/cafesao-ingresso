@@ -22,7 +22,7 @@ export default function DaysAndHours(props: {
               className="btn btn-lg btn-wide"
               onClick={() => {
                 navigate(
-                  `/time?id=${id}&choiceDay=${props.daysHours.day}&choiceHours=${hour}`,
+                  `/ChoiceChair?id=${id}&day=${props.daysHours.day}&hour=${hour}`,
                 )
               }}
             >

@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from '../pages/home'
 import Film from '../pages/film'
-import Time from '../pages/time'
+import ChoiceChair from '../pages/choiceChair'
 import Review from '../pages/review'
 import Payment from '../pages/payment'
 import Login from '../pages/login'
@@ -13,7 +13,7 @@ function Router() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/film" element={<Film />} />
-        <Route path="/time" element={<Time />} />
+        <Route path="/choiceChair" element={<ChoiceChair />} />
         <Route path="/review" element={<Review />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/auth/login" element={<Login />} />
