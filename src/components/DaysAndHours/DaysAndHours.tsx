@@ -1,12 +1,13 @@
 import { useNavigate, useLocation } from 'react-router-dom'
 import { IDataFilmsChoiceDaysHours } from '../../interface/data'
+import { IState } from '../../interface/state'
 
 export default function DaysAndHours(props: {
   daysHours: IDataFilmsChoiceDaysHours
   checked: boolean
 }) {
-  const search = useLocation().search
-  const id = new URLSearchParams(search).get('id')
+  const location = useLocation()
+  const { id } = location.state as IState
   const navigate = useNavigate()
   return (
     <div className="collapse">
@@ -21,9 +22,13 @@ export default function DaysAndHours(props: {
               key={index}
               className="btn btn-lg btn-wide"
               onClick={() => {
-                navigate(
-                  `/ChoiceChair?id=${id}&day=${props.daysHours.day}&hour=${hour}`,
-                )
+                navigate('/choice-chair', {
+                  state: {
+                    id,
+                    day: props.daysHours.day,
+                    hour,
+                  },
+                })
               }}
             >
               {hour}

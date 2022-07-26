@@ -6,11 +6,7 @@ import api from '../services/api'
 import { IDataFilms } from '../interface/data'
 
 export default function index() {
-  const {
-    data,
-    error,
-    isValidating: loading,
-  } = useSWR<IDataFilms, Error>(['/films', 'get'], api, {
+  const { data, error } = useSWR<IDataFilms, Error>(['/films', 'get'], api, {
     revalidateOnFocus: false,
     refreshWhenHidden: false,
     refreshInterval: 0,
@@ -20,7 +16,7 @@ export default function index() {
   return (
     <div className="flex flex-col h-screen">
       <Menu />
-      {loading ? <p>Loading...</p> : <SlideFilms data={data} />}
+      {data === undefined ? <p>Loading...</p> : <SlideFilms data={data} />}
     </div>
   )
 }
