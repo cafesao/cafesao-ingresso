@@ -29,9 +29,9 @@ export default function film() {
       {data === undefined ? (
         <p>Loading...</p>
       ) : (
-        <div className="justify-center text-center items-center">
+        <div className="justify-center text-center items-center mx-0 lg:mx-64 lg:mt-14">
           <div className="hero bg-base-200">
-            <div className="hero-content flex-col max-w-sm md:max-w-none md:flex-row">
+            <div className="hero-content flex-col max-w-sm lg:max-w-none lg:flex-row">
               <img
                 src={data?.image}
                 className="max-w-sm rounded-lg shadow-2xl"

@@ -8,6 +8,7 @@ export default function Chair(params: {
   handleSelectedChair: Function
   selectedChair: string[]
 }) {
+  const MAX_WIDTH = 1024
   const classNameButtonOpen = 'btn btn-circle btn-success'
   const classNameButtonSpecial = 'btn btn-circle btn-info'
   const classNameButtonSelected = 'btn btn-circle btn-secondary'
@@ -60,7 +61,7 @@ export default function Chair(params: {
       onMouseOut={(event) => handleMouseChair(event)}
       onClick={() => handleClickChair()}
     >
-      {width < 768 ? params.seat : chair}
+      {width < MAX_WIDTH ? params.seat : chair}
     </button>
   ) : (
     <button
@@ -69,7 +70,7 @@ export default function Chair(params: {
       onMouseOut={(event) => handleMouseChair(event)}
       onClick={() => handleClickChair()}
     >
-      {width < 768 ? params.seat : chair}
+      {width < MAX_WIDTH ? params.seat : chair}
     </button>
   )
 }

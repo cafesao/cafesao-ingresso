@@ -39,7 +39,7 @@ export default function choiceChair() {
         <p>Loading...</p>
       ) : (
         <>
-          <div className="grid grid-cols-8 gap-4 justify-items-center scale-75 md:scale-100 md:mx-auto md:mt-14">
+          <div className="grid grid-cols-8 gap-4 justify-items-center scale-75 lg:scale-100 lg:mx-auto lg:mt-14">
             {data?.map((chair, index) => (
               <Chair
                 seat={chair.seat}
@@ -51,7 +51,7 @@ export default function choiceChair() {
               />
             ))}
           </div>
-          <div className="flex flex-col justify-center space-x-2 mt-12 md:flex-row md:space-x-10 md:mt-24">
+          <div className="flex flex-col justify-center space-x-2 mt-12 lg:flex-row lg:space-x-10 lg:mt-24">
             <div className="flex flex-row justify-center items-center space-x-2">
               <Box color="hsl(var(--su))" />
               <p>Disponivel</p>
