@@ -3,3 +3,7 @@ export interface IState {
   day: string
   hour: string
 }
+
+export interface IStateChair extends IState {
+  selectedChair: string[]
+}
